@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/imagensCert">
+        <file>umAto_img.png</file>
+        <file>cincoAtos_img.png</file>
+        <file>doisAtos_img.png</file>
+        <file>quatroAtos_img.png</file>
+        <file>resTrans_img.png</file>
+        <file>seisAtos_img.png</file>
+        <file>seteAtos_img.png</file>
+        <file>tresAtos_img.png</file>
+        <file>mat_img.png</file>
+        <file>iconeaz.png</file>
+        <file>iconeza.png</file>
+    </qresource>
+</RCC>

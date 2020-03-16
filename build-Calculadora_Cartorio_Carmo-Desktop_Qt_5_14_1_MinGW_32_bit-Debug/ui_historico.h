@@ -12,23 +12,18 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Historico
 {
 public:
-    QPushButton *pushButton;
 
     void setupUi(QDialog *Historico)
     {
         if (Historico->objectName().isEmpty())
             Historico->setObjectName(QString::fromUtf8("Historico"));
         Historico->resize(800, 600);
-        pushButton = new QPushButton(Historico);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(140, 100, 93, 28));
 
         retranslateUi(Historico);
 
@@ -38,7 +33,6 @@ public:
     void retranslateUi(QDialog *Historico)
     {
         Historico->setWindowTitle(QCoreApplication::translate("Historico", "Dialog", nullptr));
-        pushButton->setText(QCoreApplication::translate("Historico", "PushButton", nullptr));
     } // retranslateUi
 
 };

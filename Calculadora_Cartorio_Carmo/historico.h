@@ -2,21 +2,25 @@
 #define HISTORICO_H
 
 #include <QDialog>
+#include <QtSql>
+#include "calculadora.h"
 
 namespace Ui {
-class Historico;
+class historico;
 }
 
-class Historico : public QDialog
+class historico : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Historico(QWidget *parent = nullptr);
-    ~Historico();
+    explicit historico(QWidget *parent = nullptr);
+    ~historico();
+
+private slots:
 
 private:
-    Ui::Historico *ui;
+    Ui::historico *ui;
 };
 
 #endif // HISTORICO_H

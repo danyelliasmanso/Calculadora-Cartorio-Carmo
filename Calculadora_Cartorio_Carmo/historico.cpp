@@ -1,14 +1,15 @@
 #include "historico.h"
 #include "ui_historico.h"
+#include <QtSql>
 
-Historico::Historico(QWidget *parent) :
+historico::historico(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Historico)
+    ui(new Ui::historico)
 {
     ui->setupUi(this);
 }
 
-Historico::~Historico()
+historico::~historico()
 {
     delete ui;
 }
