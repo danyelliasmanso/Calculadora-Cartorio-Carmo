@@ -48,7 +48,7 @@ public:
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(590, 30, 31, 28));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/imagensCert/iconeza.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/imagensCert/calendar_item.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_3->setIcon(icon1);
 
         retranslateUi(historico);

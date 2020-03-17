@@ -67,7 +67,7 @@
    </property>
    <property name="icon">
     <iconset resource="Imagens.qrc">
-     <normaloff>:/imagensCert/iconeza.png</normaloff>:/imagensCert/iconeza.png</iconset>
+     <normaloff>:/imagensCert/calendar_item.png</normaloff>:/imagensCert/calendar_item.png</iconset>
    </property>
   </widget>
  </widget>

@@ -9,8 +9,6 @@ Calculadora::Calculadora(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->comboBox_tipo->setFocus();
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("E:/QtProjects/Calculadora-Cartorio-Carmo/Calculadora_Cartorio_Carmo/CalcCartorioCarmo.db");
 
 }
 
@@ -401,17 +399,11 @@ void Calculadora::on_btn_calcular_clicked()
 
 
         ui->total_edit->setText(QString::number(total));
-        db.open();
         QString cliente = ui->campo_cliente->text();
         QString tipo = ui->comboBox_tipo->currentText();
         QString valorTotal = ui->total_edit->text();
-        QSqlQuery query(db);
-        query.prepare("INSERT INTO Registros (Data, Cliente, TipoCertidao, ValorTotal) VALUES (CURRENT_DATE, :cliente, :tipo, :valortotal);");
-        query.bindValue(":cliente", cliente);
-        query.bindValue(":tipo", tipo);
-        query.bindValue(":valortotal", valorTotal);
-        if(!query.exec()){
-            qDebug()<<query.lastError();
+        if(persistencia.Inserir_dados(cliente, tipo, valorTotal) == false){
+            qDebug()<<"Registro não foi gravado.";
         }
         else{
             qDebug()<<"Registro Gravado com Sucesso";
@@ -429,15 +421,15 @@ void Calculadora::on_btn_calcular_clicked()
             ui->check_negativa->setChecked(false);
             ui->radio_100->setChecked(false);
             ui->radio_50->setChecked(false);
-            ui->total_edit->clear();
         }
 
     }
 }
 
+
 void Calculadora::on_actionHist_rico_triggered()
 {
     hide();
-
-
+    Historico = new historico(this);
+    Historico->show();
 }

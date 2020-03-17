@@ -7,6 +7,7 @@ historico::historico(QWidget *parent) :
     ui(new Ui::historico)
 {
     ui->setupUi(this);
+    ui->tableView->setModel(persistencia.Persistencia_dados());
 }
 
 historico::~historico()

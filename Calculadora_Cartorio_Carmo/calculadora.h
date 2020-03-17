@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QtSql>
+#include "persistencia.h"
 #include "historico.h"
 
 
@@ -80,8 +81,7 @@ private slots:
 
 private:
     Ui::Calculadora *ui;
-    QSqlDatabase db;
     historico *Historico;
-
+    Persistencia persistencia;
 };
 #endif // CALCULADORA_H

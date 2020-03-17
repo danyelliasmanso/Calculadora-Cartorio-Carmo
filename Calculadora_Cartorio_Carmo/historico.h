@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QtSql>
-#include "calculadora.h"
+#include "persistencia.h"
 
 namespace Ui {
 class historico;
@@ -21,6 +21,7 @@ private slots:
 
 private:
     Ui::historico *ui;
+    Persistencia persistencia;
 };
 
 #endif // HISTORICO_H

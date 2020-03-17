@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     calculadora.cpp \
     historico.cpp \
-    main.cpp
+    main.cpp \
+    persistencia.cpp
 
 HEADERS += \
     calculadora.h \
-    historico.h
+    historico.h \
+    persistencia.h
 
 FORMS += \
     calculadora.ui \
