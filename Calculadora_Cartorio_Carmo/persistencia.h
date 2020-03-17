@@ -10,6 +10,8 @@ public:
     Persistencia();
      QSqlQueryModel *Persistencia_dados();
      bool Inserir_dados(QString cliente, QString tipo, QString valorTotal);
+     QSqlQueryModel *Persistencia_dados_ordem_alfabetica();
+     QSqlQueryModel *Persistencia_dados_ordem_data();
 private:
     QSqlDatabase db;
 };

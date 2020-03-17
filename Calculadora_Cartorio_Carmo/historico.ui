@@ -23,7 +23,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_Atualizar">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -36,10 +36,10 @@
     <string>Atualizar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btn_alfabetica">
    <property name="geometry">
     <rect>
-     <x>552</x>
+     <x>554</x>
      <y>30</y>
      <width>31</width>
      <height>28</height>
@@ -53,7 +53,7 @@
      <normaloff>:/imagensCert/iconeaz.png</normaloff>:/imagensCert/iconeaz.png</iconset>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="btn_data">
    <property name="geometry">
     <rect>
      <x>590</x>
@@ -68,6 +68,23 @@
    <property name="icon">
     <iconset resource="Imagens.qrc">
      <normaloff>:/imagensCert/calendar_item.png</normaloff>:/imagensCert/calendar_item.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_alfabetica_2">
+   <property name="geometry">
+    <rect>
+     <x>517</x>
+     <y>30</y>
+     <width>31</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="Imagens.qrc">
+     <normaloff>:/imagensCert/voltar.png</normaloff>:/imagensCert/voltar.png</iconset>
    </property>
   </widget>
  </widget>

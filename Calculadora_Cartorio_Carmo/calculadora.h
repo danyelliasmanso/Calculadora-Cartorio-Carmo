@@ -79,6 +79,8 @@ private slots:
 
     void on_actionHist_rico_triggered();
 
+    void on_actionSair_triggered();
+
 private:
     Ui::Calculadora *ui;
     historico *Historico;

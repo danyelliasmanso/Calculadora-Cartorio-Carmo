@@ -19,8 +19,17 @@ public:
 
 private slots:
 
+    void on_btn_Atualizar_clicked();
+
+    void on_btn_alfabetica_clicked();
+
+    void on_btn_data_clicked();
+
+    void on_btn_alfabetica_2_clicked();
+
 private:
     Ui::historico *ui;
+
     Persistencia persistencia;
 };
 

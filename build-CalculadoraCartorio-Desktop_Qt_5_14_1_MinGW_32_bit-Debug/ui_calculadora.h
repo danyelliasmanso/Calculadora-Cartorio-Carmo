@@ -10,6 +10,7 @@
 #define UI_CALCULADORA_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
@@ -88,6 +89,9 @@ public:
         if (Calculadora->objectName().isEmpty())
             Calculadora->setObjectName(QString::fromUtf8("Calculadora"));
         Calculadora->resize(637, 531);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/imagensCert/icone_programa.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Calculadora->setWindowIcon(icon);
         actionHist_rico = new QAction(Calculadora);
         actionHist_rico->setObjectName(QString::fromUtf8("actionHist_rico"));
         actionSair = new QAction(Calculadora);
@@ -106,6 +110,7 @@ public:
         horizontalLayout->addWidget(label_tipo);
 
         comboBox_tipo = new QComboBox(layoutWidget);
+        comboBox_tipo->addItem(QString());
         comboBox_tipo->addItem(QString());
         comboBox_tipo->addItem(QString());
         comboBox_tipo->setObjectName(QString::fromUtf8("comboBox_tipo"));
@@ -317,12 +322,16 @@ public:
 
     void retranslateUi(QMainWindow *Calculadora)
     {
-        Calculadora->setWindowTitle(QCoreApplication::translate("Calculadora", "MainWindow", nullptr));
+        Calculadora->setWindowTitle(QCoreApplication::translate("Calculadora", "Calculadora", nullptr));
         actionHist_rico->setText(QCoreApplication::translate("Calculadora", "Hist\303\263rico", nullptr));
+#if QT_CONFIG(shortcut)
+        actionHist_rico->setShortcut(QCoreApplication::translate("Calculadora", "Ctrl+H", nullptr));
+#endif // QT_CONFIG(shortcut)
         actionSair->setText(QCoreApplication::translate("Calculadora", "Sair", nullptr));
         label_tipo->setText(QCoreApplication::translate("Calculadora", "Tipo de Certid\303\243o:", nullptr));
         comboBox_tipo->setItemText(0, QCoreApplication::translate("Calculadora", "Quinzen\303\241ria", nullptr));
         comboBox_tipo->setItemText(1, QCoreApplication::translate("Calculadora", "Vinten\303\241ria", nullptr));
+        comboBox_tipo->setItemText(2, QCoreApplication::translate("Calculadora", "Comum", nullptr));
 
         label_cliente->setText(QCoreApplication::translate("Calculadora", "Cliente:", nullptr));
         groupBox_Tabela->setTitle(QCoreApplication::translate("Calculadora", "Tabela", nullptr));

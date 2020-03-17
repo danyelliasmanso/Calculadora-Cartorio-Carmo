@@ -8,6 +8,8 @@ Calculadora::Calculadora(QWidget *parent) :
     ui(new Ui::Calculadora)
 {
     ui->setupUi(this);
+    this->setFixedWidth(637);
+    this->setFixedHeight(531);
     ui->comboBox_tipo->setFocus();
 
 }
@@ -194,6 +196,9 @@ void Calculadora::on_comboBox_tipo_currentIndexChanged(int index)
     }
     if(index == 2){
         tipo = "Vintenaria";
+    }
+    if(index == 3){
+        tipo = "Comum";
     }
 }
 
@@ -398,7 +403,7 @@ void Calculadora::on_btn_calcular_clicked()
 
 
 
-        ui->total_edit->setText(QString::number(total));
+        ui->total_edit->setText("R$" + QString::number(total));
         QString cliente = ui->campo_cliente->text();
         QString tipo = ui->comboBox_tipo->currentText();
         QString valorTotal = ui->total_edit->text();
@@ -432,4 +437,9 @@ void Calculadora::on_actionHist_rico_triggered()
     hide();
     Historico = new historico(this);
     Historico->show();
+}
+
+void Calculadora::on_actionSair_triggered()
+{
+    close();
 }

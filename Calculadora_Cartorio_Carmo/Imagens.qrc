@@ -11,5 +11,7 @@
         <file>mat_img.png</file>
         <file>iconeaz.png</file>
         <file>calendar_item.png</file>
+        <file>voltar.png</file>
+        <file>icone_programa.png</file>
     </qresource>
 </RCC>

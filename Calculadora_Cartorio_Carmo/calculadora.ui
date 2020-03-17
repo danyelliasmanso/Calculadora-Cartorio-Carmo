@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Calculadora</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Imagens.qrc">
+    <normaloff>:/imagensCert/icone_programa.png</normaloff>:/imagensCert/icone_programa.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
@@ -41,6 +45,11 @@
        <item>
         <property name="text">
          <string>Vintenária</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Comum</string>
         </property>
        </item>
       </widget>
@@ -389,6 +398,9 @@
   <action name="actionHist_rico">
    <property name="text">
     <string>Histórico</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="actionSair">
