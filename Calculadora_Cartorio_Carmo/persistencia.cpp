@@ -5,8 +5,8 @@ Persistencia::Persistencia()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dir=qApp->applicationDirPath();
-    QString banco=dir+"/CalcCartorioCarmo.db";
-    db.setDatabaseName("E:/QtProjects/Calculadora-Cartorio-Carmo/Calculadora_Cartorio_Carmo/CalcCartorioCarmo.db");
+    QString banco=dir+"/banco_de_dados/banco.db";
+    db.setDatabaseName(banco);
 }
 
 QSqlQueryModel *Persistencia::Persistencia_dados()
@@ -14,7 +14,7 @@ QSqlQueryModel *Persistencia::Persistencia_dados()
     db.open();
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery query(db);
-    query.prepare("SELECT * FROM Registros;");
+    query.prepare("SELECT strftime('%d-%m-%Y',Data) as Data, Cliente, TipoCertidao, ValorTotal FROM Registros");
     if(!query.exec())
         qDebug() << "Persistencia_dados<<ListarRegistros" << db.lastError() << "\n\tquery: " << query.lastError();
     model->setQuery(query);
@@ -49,7 +49,7 @@ QSqlQueryModel *Persistencia::Persistencia_dados_ordem_alfabetica()
     db.open();
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery query(db);
-    query.prepare("SELECT * FROM Registros ORDER BY Cliente");
+    query.prepare("SELECT strftime('%d-%m-%Y',Data) as Data, Cliente, TipoCertidao, ValorTotal FROM Registros ORDER BY Cliente");
     if(!query.exec())
         qDebug() << "Persistencia_dados<<ListarRegistros" << db.lastError() << "\n\tquery: " << query.lastError();
     model->setQuery(query);
@@ -63,7 +63,7 @@ QSqlQueryModel *Persistencia::Persistencia_dados_ordem_data()
     db.open();
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery query(db);
-    query.prepare("SELECT * FROM Registros ORDER BY Data");
+    query.prepare("SELECT strftime('%d-%m-%Y',Data) as Data, Cliente, TipoCertidao, ValorTotal FROM Registros ORDER BY Data");
     if(!query.exec())
         qDebug() << "Persistencia_dados<<ListarRegistros" << db.lastError() << "\n\tquery: " << query.lastError();
     model->setQuery(query);

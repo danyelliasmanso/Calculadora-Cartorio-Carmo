@@ -9,9 +9,11 @@ historico::historico(QWidget *parent) :
     ui(new Ui::historico)
 {
     ui->setupUi(this);
+    this->setFixedWidth(637);
+    this->setFixedHeight(531);
     ui->tableView->setModel(persistencia.Persistencia_dados());
     ui->tableView->setColumnWidth(0, 100);
-    ui->tableView->setColumnWidth(1, 290);
+    ui->tableView->setColumnWidth(1, 260);
 }
 
 historico::~historico()

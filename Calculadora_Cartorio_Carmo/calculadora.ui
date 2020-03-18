@@ -407,6 +407,9 @@
    <property name="text">
     <string>Sair</string>
    </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
   </action>
  </widget>
  <tabstops>

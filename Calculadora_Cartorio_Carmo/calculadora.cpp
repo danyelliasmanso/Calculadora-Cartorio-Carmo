@@ -294,7 +294,7 @@ void Calculadora::on_btn_calcular_clicked()
     float quesito100 = 11.59;
     float quesito50 = 5.80;
     float negativa100 = 92.94;
-    float negativa50 = 52.98;
+    float negativa50 = 54.06;
     if(ui->mat_espaco->text().isEmpty() && ui->um_espaco->text().isEmpty() && ui->dois_espaco->text().isEmpty() &&
             ui->tres_espaco->text().isEmpty() && ui->quatro_espaco->text().isEmpty() && ui->cinco_espaco->text().isEmpty() &&
             ui->seis_espaco->text().isEmpty() && ui->sete_espaco->text().isEmpty() && ui->resTrans_espaco->text().isEmpty() &&
@@ -377,7 +377,7 @@ void Calculadora::on_btn_calcular_clicked()
                      calc_seteAtos_50(ui->sete_espaco->text()) +
                      calc_resTrans_50(ui->resTrans_espaco->text()) + quesito50 + negativa50);
         }
-        if(ui->radio_100->isChecked() && (!ui->check_quesito->isChecked() && !ui->check_negativa->isChecked())){
+        if(ui->radio_100->isChecked() && ((!ui->check_quesito->isChecked()) && (!ui->check_negativa->isChecked()))){
             total = (calc_mat_100(ui->mat_espaco->text()) +
                      calc_umAto_100(ui->um_espaco->text()) +
                      calc_doisAtos_100(ui->dois_espaco->text()) +
@@ -389,7 +389,7 @@ void Calculadora::on_btn_calcular_clicked()
                      calc_resTrans_100(ui->resTrans_espaco->text()));
 
         }
-        if(ui->radio_50->isChecked() && (!ui->check_quesito->isChecked() && !ui->check_negativa->isChecked())){
+        if(ui->radio_50->isChecked() && ((!ui->check_quesito->isChecked()) && (!ui->check_negativa->isChecked()))){
             total = (calc_mat_50(ui->mat_espaco->text()) +
                      calc_umAto_50(ui->um_espaco->text()) +
                      calc_doisAtos_50(ui->dois_espaco->text()) +
@@ -400,8 +400,6 @@ void Calculadora::on_btn_calcular_clicked()
                      calc_seteAtos_50(ui->sete_espaco->text()) +
                      calc_resTrans_50(ui->resTrans_espaco->text()));
         }
-
-
 
         ui->total_edit->setText("R$" + QString::number(total));
         QString cliente = ui->campo_cliente->text();
